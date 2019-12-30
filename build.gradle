@@ -1,0 +1,63 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.11.RELEASE'
+    }
+
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE'
+        classpath ("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'cn.ywb.springcloud'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.11'
+    targetCompatibility = '1.11'
+}
+
+subprojects {
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    apply plugin: 'java'
+
+    configurations {
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+    }
+
+    dependencyManagement {
+
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        compileOnly 'org.projectlombok:lombok'
+        developmentOnly 'org.springframework.boot:spring-boot-devtools'
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+    }
+
+}
