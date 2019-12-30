@@ -1,6 +1,8 @@
 buildscript {
     ext {
         springBootVersion = '2.1.11.RELEASE'
+        springCloudVersion = 'Greenwich.SR4'
+        springCloudAlibabaVersion = '2.1.0.RELEASE'
     }
 
     repositories {
@@ -16,7 +18,6 @@ buildscript {
 
 allprojects {
     apply plugin: 'java-library'
-    apply plugin: 'idea'
     apply plugin: 'io.spring.dependency-management'
 
     group = 'cn.ywb.springcloud'
@@ -29,6 +30,7 @@ subprojects {
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
     apply plugin: 'java'
+    apply plugin: 'idea'
 
     configurations {
         developmentOnly
@@ -46,11 +48,16 @@ subprojects {
     }
 
     dependencyManagement {
-
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+        }
     }
 
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
         compileOnly 'org.projectlombok:lombok'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'

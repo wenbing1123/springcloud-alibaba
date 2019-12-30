@@ -1,5 +1,5 @@
 rootProject.name = 'springcloud-alibaba'
 
-include 'springcloud-alibaba-nacos'
-include 'springcloud-alibaba-sentinel'
 include 'springcloud-alibaba-gateway'
+include 'springcloud-alibaba-service-user'
+include 'springcloud-alibaba-service-product'
