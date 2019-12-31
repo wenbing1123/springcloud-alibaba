@@ -16,21 +16,20 @@ buildscript {
     }
 }
 
-allprojects {
-    apply plugin: 'java-library'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
     group = 'cn.ywb.springcloud'
     version = '1.0.0'
     sourceCompatibility = '1.11'
     targetCompatibility = '1.11'
-}
-
-subprojects {
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
-    apply plugin: 'java'
-    apply plugin: 'idea'
+    jar.enabled = true
+    bootJar.enabled = false
 
     configurations {
         developmentOnly

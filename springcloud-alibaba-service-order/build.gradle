@@ -1,3 +1,4 @@
+bootJar.enabled = true
 dependencies {
     implementation project(':springcloud-alibaba-service-stock')
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
