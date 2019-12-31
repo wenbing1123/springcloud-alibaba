@@ -1,10 +1,7 @@
 dependencies {
-    implementation project(':springcloud-alibaba-service-stock')
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-seata'
     implementation 'com.alibaba.cloud:spring-cloud-starter-dubbo'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-stream-rocketmq'
 }

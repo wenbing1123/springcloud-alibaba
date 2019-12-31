@@ -21,7 +21,7 @@ allprojects {
     apply plugin: 'io.spring.dependency-management'
 
     group = 'cn.ywb.springcloud'
-    version = '0.0.1-SNAPSHOT'
+    version = '1.0.0'
     sourceCompatibility = '1.11'
     targetCompatibility = '1.11'
 }
@@ -44,6 +44,7 @@ subprojects {
 
     repositories {
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven{ url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/'}
         mavenCentral()
     }
 
@@ -58,6 +59,9 @@ subprojects {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-actuator'
+        implementation 'io.springfox:springfox-swagger2:3.0.0-SNAPSHOT'
+        implementation 'io.springfox:springfox-spring-webflux:3.0.0-SNAPSHOT'
+        implementation 'io.springfox:springfox-swagger-ui:3.0.0-SNAPSHOT'
         compileOnly 'org.projectlombok:lombok'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
