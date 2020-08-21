@@ -1,17 +1,16 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.11.RELEASE'
-        springCloudVersion = 'Greenwich.SR4'
-        springCloudAlibabaVersion = '2.1.0.RELEASE'
+        set('springBootVersion', "2.2.9.RELEASE")
+        set('springCloudVersion', "Hoxton.SR7")
+        set('springCloudAlibabaVersion', "2.2.1.RELEASE")
     }
 
     repositories {
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-        mavenCentral()
     }
 
     dependencies {
-        classpath 'io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE'
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE'
         classpath ("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
@@ -24,8 +23,8 @@ subprojects {
 
     group = 'cn.ywb.springcloud'
     version = '1.0.0'
-    sourceCompatibility = '1.11'
-    targetCompatibility = '1.11'
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
     jar.enabled = true
@@ -43,8 +42,6 @@ subprojects {
 
     repositories {
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-        maven{ url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/'}
-        mavenCentral()
     }
 
     dependencyManagement {
@@ -56,11 +53,9 @@ subprojects {
     }
 
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter'
-        implementation 'org.springframework.boot:spring-boot-starter-actuator'
-        implementation 'io.springfox:springfox-swagger2:3.0.0-SNAPSHOT'
-        implementation 'io.springfox:springfox-spring-webflux:3.0.0-SNAPSHOT'
-        implementation 'io.springfox:springfox-swagger-ui:3.0.0-SNAPSHOT'
+        implementation 'io.springfox:springfox-swagger2:2.10.5'
+        implementation 'io.springfox:springfox-swagger-ui:2.10.5'
+        implementation 'io.springfox:springfox-spring-webflux:2.10.5'
         compileOnly 'org.projectlombok:lombok'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -70,4 +65,7 @@ subprojects {
         }
     }
 
+    test {
+        useJUnitPlatform()
+    }
 }

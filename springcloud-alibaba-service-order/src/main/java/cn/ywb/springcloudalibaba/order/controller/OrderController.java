@@ -12,8 +12,11 @@ import reactor.core.publisher.Mono;
 @Api("订单服务")
 public class OrderController {
 
-    @Autowired
     private OrderService orderService;
+
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
 
     @PostMapping
     @ApiOperation("创建订单")
