@@ -57,7 +57,6 @@ subprojects {
         implementation 'io.springfox:springfox-swagger-ui:2.10.5'
         implementation 'io.springfox:springfox-spring-webflux:2.10.5'
         compileOnly 'org.projectlombok:lombok'
-        developmentOnly 'org.springframework.boot:spring-boot-devtools'
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
         annotationProcessor 'org.projectlombok:lombok'
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
