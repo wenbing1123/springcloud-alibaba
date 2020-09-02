@@ -10,12 +10,15 @@ pluginManagement {
 rootProject.name = 'springcloud-alibaba'
 
 include 'springcloud-alibaba-gateway'
-include 'springcloud-alibaba-service-account'
-include 'springcloud-alibaba-service-storage'
+include 'springcloud-alibaba-service-account-api'
+include 'springcloud-alibaba-service-account-impl'
 include 'springcloud-alibaba-service-storage-api'
-include 'springcloud-alibaba-service-order'
-include 'springcloud-alibaba-service-pay'
+include 'springcloud-alibaba-service-storage-impl'
+include 'springcloud-alibaba-service-order-api'
+include 'springcloud-alibaba-service-order-impl'
 include 'springcloud-alibaba-service-pay-api'
-include 'springcloud-alibaba-service-logistic'
+include 'springcloud-alibaba-service-pay-impl'
+include 'springcloud-alibaba-service-logistic-api'
+include 'springcloud-alibaba-service-logistic-impl'
 
 
