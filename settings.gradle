@@ -12,6 +12,10 @@ rootProject.name = 'springcloud-alibaba'
 include 'springcloud-alibaba-gateway'
 include 'springcloud-alibaba-service-account'
 include 'springcloud-alibaba-service-storage'
+include 'springcloud-alibaba-service-storage-api'
 include 'springcloud-alibaba-service-order'
 include 'springcloud-alibaba-service-pay'
+include 'springcloud-alibaba-service-pay-api'
 include 'springcloud-alibaba-service-logistic'
+
+
