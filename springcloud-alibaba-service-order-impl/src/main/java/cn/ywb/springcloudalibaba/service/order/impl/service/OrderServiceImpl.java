@@ -27,7 +27,7 @@ public class OrderServiceImpl implements OrderService {
         int orderMoney = calculate(commodityCode, orderCount);
         accountService.debit(userId, orderMoney);
 
-        Mono<Order> orderMono = orderRepo.save(Order
+        Order order = orderRepo.save(Order
                 .builder()
                 .userId(userId)
                 .commodityCode(commodityCode)
