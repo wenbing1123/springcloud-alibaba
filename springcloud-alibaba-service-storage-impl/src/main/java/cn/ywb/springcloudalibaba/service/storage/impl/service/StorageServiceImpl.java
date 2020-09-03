@@ -17,4 +17,8 @@ public class StorageServiceImpl implements StorageService {
         this.storageRepo = storageRepo;
     }
 
+    @Override
+    public void deduct(String commodityCode, int count) {
+
+    }
 }

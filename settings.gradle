@@ -20,5 +20,5 @@ include 'springcloud-alibaba-service-pay-api'
 include 'springcloud-alibaba-service-pay-impl'
 include 'springcloud-alibaba-service-logistic-api'
 include 'springcloud-alibaba-service-logistic-impl'
-
-
+include 'springcloud-alibaba-business-purchase-api'
+include 'springcloud-alibaba-business-purchase-impl'

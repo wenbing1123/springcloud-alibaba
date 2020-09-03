@@ -1,7 +1,8 @@
 bootJar.enabled = true
 dependencies {
+    implementation project(':springcloud-alibaba-business-purchase-api')
+    implementation project(':springcloud-alibaba-service-storage-api')
     implementation project(':springcloud-alibaba-service-order-api')
-    implementation project(':springcloud-alibaba-service-account-api')
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
@@ -10,6 +11,4 @@ dependencies {
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-seata'
     implementation 'com.alibaba.cloud:spring-cloud-starter-dubbo'
     implementation 'com.alibaba.cloud:spring-cloud-starter-stream-rocketmq'
-    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
-    runtimeOnly 'dev.miku:r2dbc-mysql'
 }

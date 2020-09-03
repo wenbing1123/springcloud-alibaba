@@ -1,13 +1,13 @@
-package cn.ywb.springcloudalibaba.service.account.impl;
+package cn.ywb.springcloudalibaba.business.purchase.impl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AccountApplication {
+public class PurchaseApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AccountApplication.class, args);
+        SpringApplication.run(PurchaseApplication.class, args);
     }
 
 }
