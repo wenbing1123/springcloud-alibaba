@@ -1,4 +1,4 @@
-package cn.ywb.springcloudalibaba.service.order.impl.config;
+package cn.ywb.springcloudalibaba.business.purchase.impl.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,12 +17,12 @@ public class SwaggerConfig {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
-                        .description("springcloud alibaba order api")
-                        .title("订单服务API")
+                        .description("springcloud alibaba purchase business api")
+                        .title("购买服务API")
                         .version("1.0.0")
                         .build())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.ywb.springcloudalibaba.service.order.controller"))
+                .apis(RequestHandlerSelectors.basePackage("cn.ywb.springcloudalibaba.business.purchase.controller"))
                 .paths(PathSelectors.any())
                 .build();
 
